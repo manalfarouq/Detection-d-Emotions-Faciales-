@@ -12,3 +12,6 @@ sqlalchemy
 joblib
 tensorflow 
 ipykernel
+opencv-python 
+dlib 
+imutils
