@@ -1,12 +1,24 @@
-pandas
+# === Librairies de base ===
 numpy
+pandas
 matplotlib
-scikit-learn
 seaborn
-pytest
+scikit-learn
 joblib
-pydantic
+ipykernel
+pytest
+
+# === Deep Learning ===
+tensorflow
+keras
+
+# === Vision par ordinateur ===
+opencv-python
+dlib
+imutils
+
+# === Développement web & API ===
 fastapi
 uvicorn
 sqlalchemy
-joblib
+pydantic
