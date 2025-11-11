@@ -7,3 +7,8 @@ __pycache__/
 .idea/
 .history/
 data/
+
+# Ignorer les fichiers de modèles lourds
+notebooks/*.keras
+notebooks/*.h5
+facial_detection_model.keras
