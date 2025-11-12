@@ -2,25 +2,31 @@
 venv/
 .venv/
 
+
 # Caches Python
 __pycache__/
 .pytest_cache/
 
-# IDE / Editors
+
+# IDE / Éditeurs
 .idea/
 .vscode/
 .history/
 
+
 # Jupyter
 .ipynb_checkpoints/
+
 
 # Données et résultats
 data/
 
-# Modèles lourds
+
+# Modèles lourds / ML
 notebooks/*.keras
 notebooks/*.h5
 facial_detection_model.keras
+
 
 # Logs et fichiers temporaires
 *.log
@@ -28,5 +34,6 @@ facial_detection_model.keras
 *.swp
 .DS_Store
 
-# Databases
+
+# Fichiers sensibles / configuration
 .env
