@@ -1,14 +1,29 @@
+# Environnements virtuels
 venv/
 .venv/
+
+# Caches Python
 __pycache__/
-.idea/
 .pytest_cache/
-.vscode/
+
+# IDE / Editors
 .idea/
+.vscode/
 .history/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Données et résultats
 data/
 
-# Ignorer les fichiers de modèles lourds
+# Modèles lourds
 notebooks/*.keras
 notebooks/*.h5
 facial_detection_model.keras
+
+# Logs et fichiers temporaires
+*.log
+*.tmp
+*.swp
+.DS_Store
