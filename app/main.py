@@ -55,3 +55,11 @@ async def predict_emotion_endpoint(file: UploadFile = File(...), db: Session = D
     finally:
         if os.path.exists(temp_filename):
             os.remove(temp_filename)
+    
+@app.get("/history", response_model=list[PredictionOut])
+def get_history(db: Session = Depends(get_db)):
+    """
+    Récupère toutes les prédictions enregistrées dans la base de données.
+    """
+    predictions = db.query(Prediction).order_by(Prediction.created_at.desc()).all()
+    return predictions            
