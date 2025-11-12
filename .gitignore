@@ -27,3 +27,6 @@ facial_detection_model.keras
 *.tmp
 *.swp
 .DS_Store
+
+# Databases
+.env
