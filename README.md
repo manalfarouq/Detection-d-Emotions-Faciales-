@@ -26,16 +26,16 @@ Application d'IA en vision par ordinateur détectant les visages et prédisant l
 
 ## Contexte
 
-Ce projet permet d’analyser les émotions des utilisateurs à partir d’images faciales, utile pour :
+Ce projet permet d'analyser les émotions des utilisateurs à partir d'images faciales, utile pour :
 
-- Tests produits et UX  
+- Tests produits 
 - Applications interactives  
 - Analyse comportementale  
 
 **Objectifs principaux :**  
 
 - Détecter automatiquement les visages dans une image  
-- Prédire l’émotion parmi 7 classes : `angry`, `disgust`, `fear`, `happy`, `neutral`, `sad`, `surprise`  
+- Prédire l'émotion parmi 7 classes : `angry`, `disgust`, `fear`, `happy`, `neutral`, `sad`, `surprise`  
 - Stocker les résultats dans la base de données  
 - Fournir une API performante et testée pour intégration rapide
 
@@ -174,3 +174,9 @@ pytest tests/
 ```
 
 Tous les tests sont automatisés via GitHub Actions à chaque push pour garantir la stabilité du projet.
+
+
+---
+
+
+⭐ Si ce projet vous a aidé, n'hésitez pas à lui donner une étoile sur GitHub !
