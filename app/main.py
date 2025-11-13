@@ -4,7 +4,6 @@ import shutil, uuid, os, cv2
 
 from app.database import get_db, engine
 from app.models import Base, Prediction
-from app.schemas import PredictionOut
 from app.predict import predict_emotion, detect_faces
 
 # Créer les tables
