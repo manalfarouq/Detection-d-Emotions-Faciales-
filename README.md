@@ -1,8 +1,17 @@
 # API de Détection d'Émotions Faciales
 
-[![Python](https://img.shields.io/badge/Python-3.11+-blue.svg)](https://www.python.org/)  
-[![FastAPI](https://img.shields.io/badge/FastAPI-0.100+-green.svg)](https://fastapi.tiangolo.com/)  
-[![TensorFlow](https://img.shields.io/badge/TensorFlow-2.x-orange.svg)](https://www.tensorflow.org/)  
+<p align="left">
+  <a href="https://www.python.org" target="_blank" rel="noreferrer">
+    <img src="https://img.shields.io/badge/Python-3.11+-blue.svg" alt="Python" />
+  </a>
+  <a href="https://fastapi.tiangolo.com/" target="_blank" rel="noreferrer">
+    <img src="https://img.shields.io/badge/FastAPI-0.100+-green.svg" alt="FastAPI" />
+  </a>
+  <a href="https://www.tensorflow.org/" target="_blank" rel="noreferrer">
+    <img src="https://img.shields.io/badge/TensorFlow-2.x-orange.svg" alt="TensorFlow" />
+  </a>
+</p>
+
 
 Application d'IA en vision par ordinateur détectant les visages et prédisant les émotions via un modèle CNN (TensorFlow/Keras) et OpenCV. Intégrée à une API FastAPI connectée à PostgreSQL pour stocker et consulter les prédictions.
 
