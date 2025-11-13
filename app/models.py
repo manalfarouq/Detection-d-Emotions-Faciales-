@@ -12,3 +12,4 @@ class Prediction(Base):
     id = Column(Integer, primary_key=True, index=True)
     predicted_emotion = Column(String, nullable=False)
     confidence = Column(Float, nullable=False)
+    created_at = Column(DateTime(timezone=True), server_default=func.now())
