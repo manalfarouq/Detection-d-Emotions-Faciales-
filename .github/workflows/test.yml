@@ -23,4 +23,4 @@ jobs:
 
     - name: Exécuter les tests
       run: |
-        PYTHONPATH=$(pwd) poetry run pytest --maxfail=1 --disable-warnings -v
+        PYTHONPATH=$(pwd) poetry run pytest --cov=app --maxfail=1 -v 
