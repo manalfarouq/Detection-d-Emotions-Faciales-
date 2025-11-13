@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, Float, DateTime, func
+from sqlalchemy import Column, Integer, String, Float
 from sqlalchemy.orm import declarative_base
 
 
@@ -10,6 +10,5 @@ class Prediction(Base):
     __tablename__ = "predictions" 
 
     id = Column(Integer, primary_key=True, index=True)
-    image_filename = Column(String, nullable=False)
     predicted_emotion = Column(String, nullable=False)
     confidence = Column(Float, nullable=False)
