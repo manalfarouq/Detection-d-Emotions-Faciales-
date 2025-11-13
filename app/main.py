@@ -40,7 +40,6 @@ async def predict_emotion_endpoint(file: UploadFile = File(...), db: Session = D
             raise HTTPException(status_code=404, detail="Aucun visage détecté.")
 
         db_pred = Prediction(
-            image_filename=temp_filename,
             predicted_emotion=predicted_emotion,
             confidence=confidence
         )
@@ -51,7 +50,6 @@ async def predict_emotion_endpoint(file: UploadFile = File(...), db: Session = D
         # Retourner seulement ce qu'on veut afficher
         return {
             "id": db_pred.id,
-            "image": db_pred.image_filename,
             "emotion": db_pred.predicted_emotion,
             "confidence": round(db_pred.confidence, 2)
         }
@@ -71,7 +69,6 @@ def get_history(db: Session = Depends(get_db)):
     for p in predictions:
         result.append({
             "id": p.id,
-            "image": p.image_filename,
             "emotion": p.predicted_emotion,
             "confidence": round(p.confidence, 2),  # arrondi à 2 décimales
         })
