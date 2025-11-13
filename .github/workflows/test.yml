@@ -5,6 +5,12 @@ on: [push, pull_request]
 jobs:
   test:
     runs-on: ubuntu-latest
+    env:
+      USER_DB: test_user
+      PASSWORD: test_pass
+      HOST: localhost
+      PORT: 5432
+      DATABASE: test_db
 
     steps:
       - name: Checkout du code
