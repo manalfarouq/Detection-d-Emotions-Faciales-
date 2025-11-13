@@ -164,7 +164,7 @@ python -c "from app.database import Base, engine; Base.metadata.create_all(bind=
 6. **Lancer l'API**
 
 ```bash
-uvicorn app.main:app --reload
+fastapi dev app/main.py   
 ```
 
 ## Endpoints
