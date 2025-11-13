@@ -13,4 +13,3 @@ class Prediction(Base):
     image_filename = Column(String, nullable=False)
     predicted_emotion = Column(String, nullable=False)
     confidence = Column(Float, nullable=False)
-    created_at = Column(DateTime(timezone=True), server_default=func.now())

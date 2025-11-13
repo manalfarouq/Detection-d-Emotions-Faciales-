@@ -4,7 +4,6 @@ import shutil, uuid, os, cv2
 
 from app.database import get_db, engine
 from app.models import Base, Prediction
-from app.schemas import PredictionOut
 from app.predict import predict_emotion, detect_faces
 
 # Créer les tables
@@ -54,8 +53,7 @@ async def predict_emotion_endpoint(file: UploadFile = File(...), db: Session = D
             "id": db_pred.id,
             "image": db_pred.image_filename,
             "emotion": db_pred.predicted_emotion,
-            "confidence": round(db_pred.confidence, 2),
-            "date": db_pred.created_at.strftime("%d/%m/%Y %H:%M:%S")  
+            "confidence": round(db_pred.confidence, 2)
         }
 
     finally:
@@ -68,7 +66,7 @@ def get_history(db: Session = Depends(get_db)):
     Récupère toutes les prédictions enregistrées dans la base de données
     et les renvoie avec un affichage simple
     """
-    predictions = db.query(Prediction).order_by(Prediction.created_at.desc()).all()
+    predictions = db.query(Prediction).all()
     result = []
     for p in predictions:
         result.append({
@@ -76,7 +74,6 @@ def get_history(db: Session = Depends(get_db)):
             "image": p.image_filename,
             "emotion": p.predicted_emotion,
             "confidence": round(p.confidence, 2),  # arrondi à 2 décimales
-            "date": p.created_at.strftime("%d/%m/%Y %H:%M:%S")  # date lisible
         })
 
     return result          
