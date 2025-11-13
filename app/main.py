@@ -4,7 +4,6 @@ import shutil, uuid, os, cv2
 
 from app.database import get_db, engine
 from app.models import Base, Prediction
-from app.schemas import PredictionOut
 from app.predict import predict_emotion, detect_faces
 
 # Créer les tables
@@ -18,7 +17,7 @@ def home():
     return {"message": "Bienvenue sur l'API de Détection d'Émotions Faciales!"}
 
 
-@app.post("/predict_emotion", response_model=PredictionOut)
+@app.post("/predict_emotion")
 async def predict_emotion_endpoint(file: UploadFile = File(...), db: Session = Depends(get_db)):
     ALLOWED_TYPES = ["image/jpeg", "image/png"]
     if file.content_type not in ALLOWED_TYPES:
@@ -49,9 +48,32 @@ async def predict_emotion_endpoint(file: UploadFile = File(...), db: Session = D
         db.commit()
         db.refresh(db_pred)
 
-        print(f"Emotion prédite : {predicted_emotion} ({confidence:.2f})")
-        return db_pred
+        # Retourner seulement ce qu'on veut afficher
+        return {
+            "id": db_pred.id,
+            "image": db_pred.image_filename,
+            "emotion": db_pred.predicted_emotion,
+            "confidence": round(db_pred.confidence, 2)
+        }
 
     finally:
         if os.path.exists(temp_filename):
             os.remove(temp_filename)
+    
+@app.get("/history")
+def get_history(db: Session = Depends(get_db)):
+    """
+    Récupère toutes les prédictions enregistrées dans la base de données
+    et les renvoie avec un affichage simple
+    """
+    predictions = db.query(Prediction).all()
+    result = []
+    for p in predictions:
+        result.append({
+            "id": p.id,
+            "image": p.image_filename,
+            "emotion": p.predicted_emotion,
+            "confidence": round(p.confidence, 2),  # arrondi à 2 décimales
+        })
+
+    return result          

@@ -30,6 +30,13 @@ python-multipart = "^0.0.20"
 python-dotenv = "^1.2.1"
 
 
+[tool.poetry.group.dev.dependencies]
+httpx = "^0.28.1"
+pytest = "^9.0.1"
+pytest-cov = "^7.0.0"
+black = "^25.11.0"
+isort = "^7.0.0"
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
