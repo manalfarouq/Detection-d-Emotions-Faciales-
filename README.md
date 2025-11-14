@@ -140,7 +140,7 @@ API disponible sur :
 - http://localhost:8000
 - Documentation Swagger : http://localhost:8000/docs
 
-1. **Configurer les variables d'environnement**
+2. **Configurer les variables d'environnement**
    
 Copiez l'exemple et modifiez les valeurs selon votre configuration PostgreSQL :
 ```bash
@@ -171,7 +171,7 @@ MODEL_PATH=notebooks/facial_detection_model.keras
 CASCADE_PATH=tests/haarcascade_frontalface_default.xml
 ```
 
-2. **Lancer la base de données**
+3. **Lancer la base de données**
    
 Assurez-vous que PostgreSQL est actif et que la base de données existe :
 ```bash
@@ -188,7 +188,7 @@ python -c "from app.database import Base, engine; Base.metadata.create_all(bind=
 ```
 
 
-3. **Lancer l'API**
+4. **Lancer l'API**
 
 ```bash
 fastapi dev app/main.py
@@ -207,7 +207,7 @@ Accédez à :
 | GET     | `/`         | Message de bienvenue |
 
 
-4. **Exécuter les tests avec pytest :**
+5. **Exécuter les tests avec pytest :**
 
 ```bash
 poetry run pytest
