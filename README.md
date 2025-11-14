@@ -4,7 +4,6 @@
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.100+-green.svg)](https://fastapi.tiangolo.com/)
 [![TensorFlow](https://img.shields.io/badge/TensorFlow-2.x-orange.svg)](https://www.tensorflow.org/)
 [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-15-blue.svg)](https://www.postgresql.org/)
-[![CI](https://img.shields.io/github/actions/workflow/status/manalfarouq/Detection-d-Emotions-Faciales/test.yml?label=tests)]()
 
 
 Application d'IA en vision par ordinateur détectant les visages et prédisant les émotions via un modèle CNN (TensorFlow/Keras) et OpenCV. Intégrée à une API FastAPI connectée à PostgreSQL pour stocker et consulter les prédictions.
