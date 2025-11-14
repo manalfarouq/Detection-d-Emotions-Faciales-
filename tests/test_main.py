@@ -6,7 +6,7 @@ client = TestClient(app)
 
 def test_model_load():
     model = load_model("notebooks/facial_detection_model.keras")
-    assert model is not None
+    assert model is not None, "Le modèle n'a pas pu être chargé."
     
     
 """
