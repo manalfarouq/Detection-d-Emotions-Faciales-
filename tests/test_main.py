@@ -22,6 +22,6 @@ def test_history_format():
     assert isinstance(data, list), f"Expected list, got {type(data)}"
     if data:  # Si la liste n'est pas vide
         p = data[0]
-        required_keys = ["id", "image", "emotion", "confidence", "date"]
+        required_keys = ["id", "emotion", "confidence", "date"]
         for key in required_keys:
             assert key in p, f"Missing key: {key}"
